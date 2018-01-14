@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="#363535"
+    tools:context="com.example.yo.quicktrade.EditarUsuarioActivity">
+
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:textColorHint="#53a19b"
+        android:textColorHighlight="#53a19b"
+        android:shadowColor="#53a19b"
+        android:textColorLink="#53a19b"
+        android:textColor="#53a19b"/>
+    <EditText
+        android:id="@+id/apellidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Apellidos"
+        android:textColorHint="#53a19b"
+        android:textColorHighlight="#53a19b"
+        android:shadowColor="#53a19b"
+        android:textColorLink="#53a19b"
+        android:textColor="#53a19b"/>
+    <EditText
+        android:id="@+id/correo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo"
+        android:textColorHint="#53a19b"
+        android:textColorHighlight="#53a19b"
+        android:shadowColor="#53a19b"
+        android:textColorLink="#53a19b"
+        android:textColor="#53a19b"/>
+    <EditText
+        android:id="@+id/direccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Dirección"
+        android:textColorHint="#53a19b"
+        android:textColorHighlight="#53a19b"
+        android:shadowColor="#53a19b"
+        android:textColorLink="#53a19b"
+        android:textColor="#53a19b"/>
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|center_horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:text="VOLVER" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:text="MODIFICAR" />
+    </LinearLayout>
+
+</LinearLayout>
