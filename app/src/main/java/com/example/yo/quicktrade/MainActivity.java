@@ -5,6 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.yo.quicktrade.usuarios.ListadoUsuariosActivity;
+import com.example.yo.quicktrade.usuarios.LoginActivity;
+import com.example.yo.quicktrade.usuarios.RegisterActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -20,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void login(View v) {
         Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
+    }
+
+    public void mostrar(View v) {
+        Intent i = new Intent(this, ListadoUsuariosActivity.class);
         startActivity(i);
     }
 }

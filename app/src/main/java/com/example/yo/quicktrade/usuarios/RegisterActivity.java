@@ -1,4 +1,4 @@
-package com.example.yo.quicktrade;
+package com.example.yo.quicktrade.usuarios;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.yo.quicktrade.R;
 import com.example.yo.quicktrade.modelos.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -66,8 +67,8 @@ public class RegisterActivity extends AppCompatActivity {
                             ddbb.child(user.getUid()).setValue(new Usuario(
                                     usuario.getText().toString(),
                                     nombre.getText().toString(),
-                                    apellidos.getText().toString(),
-                                    direccion.getText().toString()
+                                    direccion.getText().toString(),
+                                    apellidos.getText().toString()
                             ));
                             Toast.makeText(RegisterActivity.this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
                             finish();

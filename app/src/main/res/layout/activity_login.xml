@@ -7,27 +7,21 @@
     android:padding="20dp"
     android:orientation="vertical"
     android:background="#363535"
-    tools:context="com.example.yo.quicktrade.RegisterActivity">
+    tools:context="com.example.yo.quicktrade.usuarios.RegisterActivity">
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/correo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Usuario"
-        android:textColorHint="#53a19b"
-        android:textColorHighlight="#53a19b"
-        android:shadowColor="#53a19b"
-        android:textColorLink="#53a19b"
+        android:hint="Correo"
+        android:textColorHint="#a753a19b"
         android:textColor="#53a19b"/>
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
-        android:textColorHint="#53a19b"
-        android:textColorHighlight="#53a19b"
-        android:shadowColor="#53a19b"
-        android:textColorLink="#53a19b"
+        android:textColorHint="#a753a19b"
         android:textColor="#53a19b"/>
 
     <LinearLayout
@@ -37,6 +31,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical|center_horizontal">
         <Button
+            android:id="@+id/volverButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -44,6 +39,7 @@
             android:text="VOLVER" />
 
         <Button
+            android:id="@+id/registrarButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"

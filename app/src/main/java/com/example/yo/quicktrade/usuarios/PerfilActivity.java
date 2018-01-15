@@ -1,7 +1,9 @@
-package com.example.yo.quicktrade;
+package com.example.yo.quicktrade.usuarios;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.yo.quicktrade.R;
 
 public class PerfilActivity extends AppCompatActivity {
 
