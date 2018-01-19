@@ -30,10 +30,10 @@
         android:textColorLink="#53a19b"
         android:textColor="#53a19b"/>
     <EditText
-        android:id="@+id/correo"
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Correo"
+        android:hint="Username"
         android:textColorHint="#53a19b"
         android:textColorHighlight="#53a19b"
         android:shadowColor="#53a19b"
@@ -57,6 +57,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical|center_horizontal">
         <Button
+            android:id="@+id/volverButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -64,6 +65,7 @@
             android:text="VOLVER" />
 
         <Button
+            android:id="@+id/modificarButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"

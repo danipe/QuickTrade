@@ -5,12 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.yo.quicktrade.usuarios.ListadoUsuariosActivity">
     <ListView
+        android:layout_weight=".9"
         android:id="@+id/lista"
         android:layout_width="match_parent"
         android:background="#363535"
-        android:layout_height="match_parent">
-
+        android:layout_height="0dp">
     </ListView>
+
 </LinearLayout>

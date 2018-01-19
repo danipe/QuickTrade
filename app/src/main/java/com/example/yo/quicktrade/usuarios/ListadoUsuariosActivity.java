@@ -1,7 +1,12 @@
 package com.example.yo.quicktrade.usuarios;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.yo.quicktrade.R;
@@ -20,11 +25,43 @@ public class ListadoUsuariosActivity extends AppCompatActivity {
 
     UsersAdapter adapter;
     ArrayList<Usuario> users = new ArrayList<>();
+    ListView lv;
+    Button volver;
+
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        users = new ArrayList<>();
+        query();
+        lv = findViewById(R.id.lista);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_usuarios);
+        volver = findViewById(R.id.volverButton);
+        volver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        query();
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(users.size()>0) {
+                    Intent i = new Intent(ListadoUsuariosActivity.this, EditarUsuarioActivity.class);
+                    i.putExtra("user", users.get(position));
+                    startActivity(i);
+                }
+            }
+        });
+    }
+
+    public void query() {
         DatabaseReference ddbb = FirebaseDatabase.getInstance().getReference("usuarios");
         Query q = ddbb.orderByKey();
         q.addValueEventListener(new ValueEventListener() {
@@ -34,7 +71,6 @@ public class ListadoUsuariosActivity extends AppCompatActivity {
                     users.add(dataSnapshot1.getValue(Usuario.class));
                 }
                 adapter = new UsersAdapter(ListadoUsuariosActivity.this, users);
-                ListView lv = findViewById(R.id.lista);
                 lv.setAdapter(adapter);
             }
 

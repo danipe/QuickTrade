@@ -20,7 +20,8 @@
         <activity android:name=".usuarios.RegisterActivity" />
         <activity android:name=".usuarios.ListadoUsuariosActivity" />
         <activity android:name=".usuarios.EditarUsuarioActivity" />
-        <activity android:name=".usuarios.PerfilActivity"></activity>
+        <activity android:name=".usuarios.PerfilActivity" />
+        <activity android:name=".productos.NewProductActivity"></activity>
     </application>
 
 </manifest>

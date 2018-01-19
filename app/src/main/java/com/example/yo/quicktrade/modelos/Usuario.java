@@ -1,10 +1,12 @@
 package com.example.yo.quicktrade.modelos;
 
+import java.io.Serializable;
+
 /**
  * Created by yo on 14/01/2018.
  */
 
-public class Usuario {
+public class Usuario implements Serializable {
     private String user, nombre, direccion, apellidos;
 
     public Usuario() {
