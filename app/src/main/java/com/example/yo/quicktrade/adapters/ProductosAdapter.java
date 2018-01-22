@@ -28,7 +28,6 @@ import java.util.ArrayList;
  */
 
 public class ProductosAdapter extends BaseAdapter {
-    CheckBox checkBox;
     ArrayList<Producto> productos;
     ArrayList<String> keys;
     Context context;
@@ -66,8 +65,8 @@ public class ProductosAdapter extends BaseAdapter {
         ((TextView) convertView.findViewById(R.id.nombre)).setText(productos.get(position).getPrecio());
         ((TextView) convertView.findViewById(R.id.apellidos)).setText(productos.get(position).getCategoria());
 
-        checkBox = ((CheckBox) convertView.findViewById(R.id.checkbox));
-        checkfav(keys.get(position));
+        CheckBox checkBox = ((CheckBox) convertView.findViewById(R.id.checkbox));
+        checkfav(keys.get(position), checkBox);
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -79,7 +78,7 @@ public class ProductosAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void checkfav(String key) {
+    public void checkfav(String key, final CheckBox checkBox) {
         checkBox.setChecked(false);
         DatabaseReference ddbb = FirebaseDatabase.getInstance().getReference("productos");
         Query q = ddbb.child(key).child("favs").orderByKey();
