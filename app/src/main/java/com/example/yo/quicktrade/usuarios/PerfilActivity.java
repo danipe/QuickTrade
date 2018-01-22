@@ -1,10 +1,13 @@
 package com.example.yo.quicktrade.usuarios;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -27,11 +30,11 @@ public class PerfilActivity extends AppCompatActivity {
     Button subir, cerrar;
     ListView lista;
     RadioGroup radioGroup;
+    CheckBox checkBox;
 
     @Override
     protected void onRestart() {
         super.onRestart();
-
     }
 
     @Override
@@ -42,6 +45,13 @@ public class PerfilActivity extends AppCompatActivity {
         cerrar = findViewById(R.id.cerrarButton);
         lista = findViewById(R.id.lista);
         radioGroup = findViewById(R.id.radioGroup);
+        checkBox = findViewById(R.id.todos);
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                query();
+            }
+        });
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -78,11 +88,28 @@ public class PerfilActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 ArrayList<Producto> productos = new ArrayList<>();
+                ArrayList<String> keys = new ArrayList<>();
                 for (DataSnapshot dataSnapshot1: dataSnapshot.getChildren()) {
-                    productos.add(dataSnapshot1.getValue(Producto.class));
+                    Producto p = dataSnapshot1.getValue(Producto.class);
+                    String key = dataSnapshot1.getKey();
+                    if(checkBox.isChecked()) {
+                        for(DataSnapshot values: dataSnapshot1.getChildren()) {
+                            if(values.getKey().equals("favs")) {
+                                for(DataSnapshot user: values.getChildren()) {
+                                    if(user.getKey().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+                                        productos.add(p);
+                                        keys.add(key);
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        productos.add(p);
+                        keys.add(key);
+                    }
                 }
 
-                lista.setAdapter(new ProductosAdapter(productos, PerfilActivity.this));
+                lista.setAdapter(new ProductosAdapter(productos, PerfilActivity.this, keys));
             }
 
             @Override
