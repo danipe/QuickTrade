@@ -1,9 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="#363535"
     tools:context="com.example.yo.quicktrade.productos.NewProductActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:textColorHint="#a753a19b"
+        android:textColor="#53a19b" />
+    <EditText
+        android:id="@+id/descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripcion"
+        android:textColorHint="#a753a19b"
+        android:textColor="#53a19b" />
+    <EditText
+        android:id="@+id/precio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Precio"
+        android:inputType="number"
+        android:textColorHint="#a753a19b"
+        android:textColor="#53a19b" />
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radioTecno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#a753a19b"
+            android:text="Tecnología"/>
+        <RadioButton
+            android:id="@+id/radioCoches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#a753a19b"
+            android:text="Coches"/>
+        <RadioButton
+            android:id="@+id/radioHogar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#a753a19b"
+            android:text="Hogar"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|center_horizontal">
+        <Button
+            android:id="@+id/volverButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:text="VOLVER" />
+
+        <Button
+            android:id="@+id/registrarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:text="SUBIR" />
+    </LinearLayout>
+
+</LinearLayout>

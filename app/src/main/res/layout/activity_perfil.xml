@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#363535"
     android:orientation="vertical"
-    tools:context="com.example.yo.quicktrade.usuarios.PerfilActivity">
+    tools:context="com.example.yo.quicktrade.usuarios.ListadoUsuariosActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".1"
+        android:background="#363535"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/cerrarButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="CERRAR SESIÓN"/>
+        <Button
+            android:id="@+id/subirButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="SUBIR PRODUCTO"/>
+    </LinearLayout>
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".05"
+        android:orientation="horizontal"
+        android:background="#363535"
+        android:gravity="center_horizontal">
+        <RadioButton
+            android:id="@+id/radioTecno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#a753a19b"
+            android:text="Tecnología"/>
+        <RadioButton
+            android:id="@+id/radioCoches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#a753a19b"
+            android:text="Coches"/>
+        <RadioButton
+            android:id="@+id/radioHogar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#a753a19b"
+            android:text="Hogar"/>
+    </RadioGroup>
+    <ListView
+        android:layout_weight=".9"
+        android:id="@+id/lista"
+        android:layout_width="match_parent"
+        android:background="#363535"
+        android:layout_height="0dp">
+    </ListView>
 
 </LinearLayout>

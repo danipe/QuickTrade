@@ -28,7 +28,6 @@ public class ListadoUsuariosActivity extends AppCompatActivity {
     ListView lv;
     Button volver;
 
-
     @Override
     protected void onRestart() {
         super.onRestart();
